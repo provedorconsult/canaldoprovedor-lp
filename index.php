@@ -129,32 +129,56 @@ function generateWhatsAppLink($service_message, $whatsapp_number) {
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Banner Carousel -->
     <section id="home" class="hero-section">
-        <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold text-white mb-4">
-                        Especialistas em <span class="text-accent">Soluções</span> para Provedores de Internet
-                    </h1>
-                    <p class="lead text-white-75 mb-4">
-                        Transforme seu provedor com nossas soluções especializadas: consultoria técnica, automação de atendimento, treinamentos e valuation. Mais de uma década de experiência no mercado de telecomunicações.
-                    </p>
-                    <div class="d-flex flex-column flex-sm-row gap-3">
-                        <a href="#services" class="btn btn-accent btn-lg px-4 py-3">
-                            <i class="fas fa-rocket me-2"></i>Conheça Nossos Serviços
-                        </a>
-                        <a href="<?php echo generateWhatsAppLink('informações gerais', $whatsapp_number); ?>" class="btn btn-outline-light btn-lg px-4 py-3" target="_blank">
-                            <i class="fab fa-whatsapp me-2"></i>Fale Conosco
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="hero-image">
-                        <i class="fas fa-broadcast-tower hero-icon"></i>
-                    </div>
-                </div>
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-indicators">
+                <?php foreach ($services as $index => $service): ?>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="<?php echo $index; ?>" 
+                        <?php echo $index === 0 ? 'class="active" aria-current="true"' : ''; ?> 
+                        aria-label="Slide <?php echo $index + 1; ?>"></button>
+                <?php endforeach; ?>
             </div>
+            
+            <div class="carousel-inner">
+                <?php foreach ($services as $index => $service): ?>
+                <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                    <div class="container">
+                        <div class="row align-items-center min-vh-100">
+                            <div class="col-lg-8 mx-auto text-center">
+                                <div class="hero-service-icon mb-4">
+                                    <i class="<?php echo $service['icon']; ?> fa-5x text-accent"></i>
+                                </div>
+                                <h1 class="display-3 fw-bold text-white mb-4">
+                                    <?php echo htmlspecialchars($service['title']); ?>
+                                </h1>
+                                <p class="lead text-white-75 mb-5 fs-3">
+                                    <?php echo htmlspecialchars($service['description']); ?>
+                                </p>
+                                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                                    <a href="<?php echo generateWhatsAppLink($service['message'], $whatsapp_number); ?>" 
+                                       class="btn btn-accent btn-lg px-5 py-3" target="_blank">
+                                        <i class="fab fa-whatsapp me-2"></i>Solicitar Orçamento
+                                    </a>
+                                    <a href="#services" class="btn btn-outline-light btn-lg px-5 py-3">
+                                        <i class="fas fa-info-circle me-2"></i>Saber Mais
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
         </div>
     </section>
 
@@ -271,6 +295,22 @@ function generateWhatsAppLink($service_message, $whatsapp_number) {
                         </div>
                     </div>
                     
+                    <div class="social-media-section mb-4">
+                        <h5 class="mb-3">Siga-nos nas Redes Sociais</h5>
+                        <div class="social-icons d-flex justify-content-center gap-4">
+                            <a href="https://www.linkedin.com/company/canal-do-provedor" 
+                               class="social-icon" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                                <span class="social-label">LinkedIn</span>
+                            </a>
+                            <a href="https://www.youtube.com/@haisemberg2008" 
+                               class="social-icon" target="_blank" title="YouTube">
+                                <i class="fab fa-youtube fa-2x"></i>
+                                <span class="social-label">YouTube</span>
+                            </a>
+                        </div>
+                    </div>
+                    
                     <a href="<?php echo generateWhatsAppLink('informações gerais', $whatsapp_number); ?>" 
                        class="btn btn-accent btn-lg px-5 py-3" target="_blank">
                         <i class="fab fa-whatsapp me-2"></i>Fale Conosco Agora
@@ -288,13 +328,23 @@ function generateWhatsAppLink($service_message, $whatsapp_number) {
                     <p class="mb-0">&copy; 2025 Canal do Provedor. Todos os direitos reservados.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <a href="<?php echo generateWhatsAppLink('informações gerais', $whatsapp_number); ?>" 
-                       class="text-white me-3" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="mailto:<?php echo $contact_email; ?>" class="text-white">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/canal-do-provedor" 
+                           class="text-white me-3" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@haisemberg2008" 
+                           class="text-white me-3" target="_blank" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="<?php echo generateWhatsAppLink('informações gerais', $whatsapp_number); ?>" 
+                           class="text-white me-3" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:<?php echo $contact_email; ?>" class="text-white" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

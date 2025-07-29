@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initNavbarBehavior();
     initServiceCardAnimations();
+    initHeroCarousel();
     
     console.log('Canal do Provedor website initialized successfully');
 });
@@ -15,24 +16,18 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 function initSmoothScrolling() {
     const navLinks = document.querySelectorAll('a[href^="#"]');
-    console.log('Found navigation links:', navLinks.length);
     
-    navLinks.forEach((link, index) => {
-        console.log(`Link ${index}:`, link.getAttribute('href'));
+    navLinks.forEach((link) => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('Clicked link:', this.getAttribute('href'));
             
             const targetId = this.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
-            console.log('Target section:', targetSection);
             
             if (targetSection) {
                 const navbar = document.querySelector('.navbar');
                 const navbarHeight = navbar ? navbar.offsetHeight : 80;
-                const targetPosition = targetSection.offsetTop - navbarHeight;
-                
-                console.log('Scrolling to position:', targetPosition);
+                const targetPosition = targetSection.offsetTop - navbarHeight - 20;
                 
                 window.scrollTo({
                     top: targetPosition,
@@ -45,8 +40,6 @@ function initSmoothScrolling() {
                     const bsCollapse = new bootstrap.Collapse(navbarCollapse);
                     bsCollapse.hide();
                 }
-            } else {
-                console.log('Target section not found for ID:', targetId);
             }
         });
     });
@@ -269,6 +262,41 @@ function initPerformanceOptimizations() {
         }
     `;
     document.head.appendChild(style);
+}
+
+/**
+ * Initialize hero carousel enhancements
+ */
+function initHeroCarousel() {
+    const carousel = document.querySelector('#heroCarousel');
+    if (!carousel) return;
+    
+    // Pause carousel on hover
+    carousel.addEventListener('mouseenter', function() {
+        const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+        if (bsCarousel) {
+            bsCarousel.pause();
+        }
+    });
+    
+    carousel.addEventListener('mouseleave', function() {
+        const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+        if (bsCarousel) {
+            bsCarousel.cycle();
+        }
+    });
+    
+    // Add keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+        if (!bsCarousel) return;
+        
+        if (e.key === 'ArrowLeft') {
+            bsCarousel.prev();
+        } else if (e.key === 'ArrowRight') {
+            bsCarousel.next();
+        }
+    });
 }
 
 // Initialize performance optimizations
