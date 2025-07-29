@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <rect x="5" y="8" width="110" height="24" rx="4" fill="#dc2626"/>
+  <text x="60" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">
+    HUAWEI
+  </text>
+  <path d="M 15 20 L 20 15 L 20 25 Z" fill="white"/>
+  <path d="M 105 20 L 100 15 L 100 25 Z" fill="white"/>
+</svg>

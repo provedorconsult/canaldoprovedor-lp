@@ -1,0 +1,93 @@
+Excelente! Com as informações fornecidas, preparei um PRD (Product Requirements Document - Documento de Requisitos do Produto) detalhado para o website **canaldoprovedor.net.br**. Este documento servirá como um guia completo para a equipe de design e desenvolvimento.
+
+---
+
+## **PRD (Product Requirements Document): Website canaldoprovedor.net.br**
+
+**Versão:** 1.0
+**Data:** 29 de Julho de 2025
+
+### **1. Introdução e Visão Geral**
+
+Este documento detalha os requisitos para a criação do website **canaldoprovedor.net.br**. O site tem como principal objetivo funcionar como a vitrine digital dos serviços especializados oferecidos pela Canal do Provedor. A plataforma deve comunicar de forma clara e eficaz a proposta de valor da empresa, estabelecendo-a como uma autoridade técnica e parceira estratégica para o crescimento de seus clientes.
+
+**Visão do Produto:** Ser o principal ponto de contato online para Provedores de Internet e profissionais de tecnologia que buscam soluções de alta performance, desde consultoria e automação até treinamentos e avaliação de negócios (Valuation). O foco é a conversão direta e ágil de interessados em leads qualificados através de um canal de comunicação instantâneo (WhatsApp).
+
+### **2. Público-Alvo**
+
+O conteúdo e a estrutura do site devem ser direcionados para os seguintes perfis:
+
+* **Provedores de Internet (ISPs):** Gestores, diretores e proprietários de provedores de pequeno, médio e grande porte que enfrentam desafios técnicos, operacionais ou estratégicos. Buscam otimizar sua infraestrutura, melhorar o atendimento ao cliente, lançar novos serviços (SVA) ou entender o valor de mercado de sua empresa.
+* **Profissionais de Tecnologia e Internet:** Gerentes de TI, administradores de rede, analistas de NOC/Core e engenheiros que necessitam de soluções técnicas específicas, como a implantação de plataformas de monitoramento (Zabbix, Grafana), ou que buscam aprimoramento profissional através de treinamentos especializados.
+
+### **3. Metas e Objetivos do Projeto**
+
+| Prioridade | Objetivo                                                                       | Métrica de Sucesso Chave (KPI)                               |
+| :--- | :--- | :--- |
+| **Primário** | Gerar leads qualificados para a equipe comercial.                                | Número de cliques nos botões "Fale Conosco" (WhatsApp).          |
+| Secundário   | Apresentar o portfólio completo de serviços de forma clara e objetiva.         | Taxa de rolagem da página; Tempo de permanência na página.       |
+| Secundário   | Consolidar a autoridade e expertise técnica da equipe Canal do Provedor. | Menção positiva da qualidade do site por novos contatos.      |
+| Secundário   | Proporcionar uma experiência de usuário fluida e intuitiva em todos os dispositivos. | Baixa taxa de rejeição; Feedback de usabilidade.               |
+
+### **4. Requisitos Funcionais (Features)**
+
+#### **4.1. Estrutura da Página Principal (Homepage)**
+
+A página será construída no formato *One Page* (Página Única), onde o usuário pode navegar por todas as seções rolando a página ou através de um menu fixo no topo.
+
+#### **4.2. Seção de Serviços**
+
+* **Layout:** A seção principal da página exibirá uma grade de banners interativos, cada um dedicado a um serviço específico.
+* **Conteúdo do Banner:** Cada banner deve conter um título claro, um ícone ou imagem representativa e uma breve descrição do serviço.
+* **Serviços a serem listados:**
+    1.  **Consultoria Técnica para Provedores:** Soluções e otimizações para a sua rede.
+    2.  **Atendente Home Office ao Cliente:** Equipe treinada para atender seu cliente.
+    3.  **Automação de Atendimento com IA:** Modernize seu suporte e reduza custos.
+    4.  **Implantação de Servidores:** Zabbix, Grafana, Logs, DNS e mais.
+    5.  **Implantação e Desenvolvimento de SVA:** Crie novas fontes de receita.
+    6.  **Treinamento Presencial e Remoto:** Capacite sua equipe com nossos especialistas.
+    7.  **Valuation:** Saiba o valor real da sua empresa no mercado.
+
+#### **4.3. Botão de Chamada para Ação (Call to Action - CTA)**
+
+* **Funcionalidade:** Cada banner de serviço terá um botão com o texto **"Fale Conosco"**.
+* **Ação:** Ao ser clicado, o botão redirecionará o usuário para o WhatsApp.
+* **Link Base do WhatsApp:** `https://wa.me/556196188786`
+* **Mensagem Pré-configurada Dinâmica:** A mensagem inicial será personalizada com base no serviço escolhido pelo usuário. O formato será: `Olá! Tenho interesse no serviço de [Nome do Serviço] que vi no site canaldoprovedor.net.br e gostaria de mais informações.`
+    * **Exemplo (clique no banner "Valuation"):** "Olá! Tenho interesse no serviço de Valuation que vi no site canaldoprovedor.net.br e gostaria de mais informações."
+    * **Exemplo (clique no banner "Servidores Zabbix"):** "Olá! Tenho interesse no serviço de Implantação de Servidores que vi no site canaldoprovedor.net.br e gostaria de mais informações."
+
+#### **4.4. Seção "Nossa Equipe" / "Especialistas"**
+
+* Esta seção deve destacar a qualificação e a senioridade do time.
+* **Texto Sugerido:** "Nossa força reside em nossa equipe. Contamos com especialistas com vasta experiência de mercado e certificações nos principais fabricantes do mundo, garantindo a entrega de soluções robustas e eficientes."
+* **Diferenciais a serem exibidos (pode ser com logos):** Mikrotik, Cisco, Huawei, Nokia, ZTE, Intelbras, Datacom, Fiberhome.
+
+#### **4.5. Rodapé (Footer)**
+
+O rodapé deve ser claro e conter todas as informações de contato.
+
+* **E-mail:** `contato@canaldoprovedor.net.br` (o endereço deve ser um link clicável `mailto:`).
+* **Botão Fale Conosco (Geral):** Um botão final de CTA que leva ao WhatsApp com uma mensagem genérica: `Olá! Visitei o site canaldoprovedor.net.br e gostaria de mais informações.`
+* **Direitos Autorais:** `© 2025 Canal do Provedor. Todos os direitos reservados.`
+
+### **5. Requisitos Não-Funcionais**
+
+* **Design (UI/UX):**
+    * A identidade visual deve ser moderna, profissional e tecnológica, utilizando uma paleta de cores que transmita confiança (sugestão: tons de azul, cinza escuro, branco e um ponto de cor vibrante para os CTAs).
+    * A navegação deve ser intuitiva e a leitura agradável.
+* **Responsividade:** O site deve ser 100% funcional e esteticamente agradável em todas as resoluções de tela (desktops, notebooks, tablets e smartphones). O layout *mobile-first* é recomendado.
+* **Performance:** O tempo de carregamento da página deve ser otimizado para ser o mais baixo possível (alvo: < 3 segundos no Google PageSpeed Insights). Imagens e scripts devem ser comprimidos e otimizados.
+* **Segurança:** Implementação obrigatória de certificado SSL (HTTPS) para garantir a segurança e a confiança do usuário.
+* **SEO (Otimização para Mecanismos de Busca):**
+    * Utilização de tags HTML semânticas (H1, H2, H3...).
+    * Meta Title e Meta Description da página devem ser otimizados para as principais palavras-chave do negócio (ex: "Consultoria para Provedores de Internet", "Automação de Atendimento para ISP").
+    * URLs amigáveis.
+
+### **6. Considerações Futuras (Fora do Escopo da v1.0)**
+
+* Criação de uma seção de Blog com artigos técnicos.
+* Desenvolvimento de páginas internas detalhando cada serviço.
+* Criação de uma área de "Cases de Sucesso".
+* Integração com ferramentas de análise de tráfego mais avançadas (além do básico).
+* Formulário de contato tradicional por e-mail.

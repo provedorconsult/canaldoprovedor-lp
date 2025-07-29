@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <rect x="5" y="8" width="110" height="24" rx="4" fill="#1f2937"/>
+  <text x="60" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">
+    CISCO
+  </text>
+  <rect x="10" y="15" width="8" height="10" fill="#06d6a0"/>
+  <rect x="102" y="15" width="8" height="10" fill="#06d6a0"/>
+</svg>
